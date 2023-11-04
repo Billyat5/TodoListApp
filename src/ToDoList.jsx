@@ -7,26 +7,22 @@ import {
     ScrollView
   } from 'react-native';
 
-function ToDoList(props) {
+  function ToDoList(props) {
     const { tasks } = props;
-
-    const components = tasks.map(function (task, index) {
-        return (
-            <>
-            <Pressable key={index}>
-                <View style={[styles.task, styles.completed]}>
-                    <Text style={styles.taskText}>{task}</Text>
-                </View>
-            </Pressable>
-            </>
-        );
-    })
-
+    
     return (
-        <>
-            <ScrollView>
-                {components}
-            </ScrollView>
+      <>
+        <ScrollView>
+            {tasks.map((task, index) => (
+            <React.Fragment key={index}>
+                <Pressable>
+                    <View style={[styles.task]}>
+                        <Text style={styles.taskText}>{task}</Text>
+                    </View>
+                </Pressable>
+            </React.Fragment>
+        ))}
+        </ScrollView>
         </>
     );
 }
@@ -45,5 +41,4 @@ const styles = StyleSheet.create({
     },
 });
   
-
 export default ToDoList;
