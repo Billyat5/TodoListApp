@@ -10,6 +10,7 @@ function App() {
     'Do laundry',
     'Go to gym',
     'Walk dog',
+    'Study'
   ]);
 
   return (
