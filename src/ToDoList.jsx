@@ -32,13 +32,19 @@ const styles = StyleSheet.create({
       padding: 10,
       borderBottomWidth: 1,
       borderColor: '#ccc',
-    },
-    completed: {
-      backgroundColor: '#e0e0e0',
+      backgroundColor: 'white',
+      marginTop: 10,
+      borderRadius: 5,
+      shadowColor: '#000',
+      shadowOffset: { width: 0, height: 1 },
+      shadowOpacity: 0.2,
+      shadowRadius: 1,
+      elevation: 2
     },
     taskText: {
       fontSize: 16,
     },
 });
+
   
 export default ToDoList;

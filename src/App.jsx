@@ -13,13 +13,22 @@ function App() {
     'Study'
   ]);
 
+  const handleAdd = (newTask) => {
+    if (tasks.includes(newTask)) {
+      alert("Task already exists!");
+      return;
+    }
+    setTasks([...tasks, newTask]);
+  };
+
   return (
     <SafeAreaView>
       <ToDoList tasks= {tasks}/>
-      <ToDoForm />
+      <ToDoForm onAdd={handleAdd}/>
     </SafeAreaView>
   );
 }
+
 
 
 export default App;
