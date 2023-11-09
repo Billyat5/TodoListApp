@@ -29,7 +29,7 @@ import {
 
 const styles = StyleSheet.create({
     task: {
-      padding: 10,
+      padding: 15,
       borderBottomWidth: 1,
       borderColor: '#ccc',
       backgroundColor: 'white',

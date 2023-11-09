@@ -1,9 +1,10 @@
-import React, {useState} from 'react';
-import {
-  SafeAreaView} from 'react-native';
-import ToDoList from './ToDoList';
-import ToDoForm from './ToDoForm';
+import React, { useState } from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import HomeScreen from './screens/HomeScreen';
+import AboutScreen from './screens/AboutScreen'; 
 
+const Stack = createStackNavigator();
 
 function App() {
   const [tasks, setTasks] = useState([
@@ -22,13 +23,15 @@ function App() {
   };
 
   return (
-    <SafeAreaView>
-      <ToDoList tasks= {tasks}/>
-      <ToDoForm onAdd={handleAdd}/>
-    </SafeAreaView>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Home">
+          {(props) => <HomeScreen {...props} tasks={tasks} onAdd={handleAdd} />}
+        </Stack.Screen>
+        <Stack.Screen name="About" component={AboutScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
-
-
 
 export default App;
