@@ -13,7 +13,7 @@ const AboutScreen = () => {
         <Text>Name of App: ToDo List App</Text>
         <TouchableOpacity onPress={handleNamePress}>
           <Text>Author Name: Billy Chan</Text>
-        </TouchableOpacity>
+        </TouchableOpacity>z
         <Text>Current Date: {new Date().toLocaleDateString()}</Text>
       </View>
     </MainLayout>

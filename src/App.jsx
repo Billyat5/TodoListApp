@@ -7,11 +7,7 @@ import AboutScreen from './screens/AboutScreen';
 const Stack = createStackNavigator();
 
 function App() {
-  const [tasks, setTasks] = useState([
-    'Do laundry',
-    'Go to gym',
-    'Walk dog',
-    'Study'
+  const [tasks, setTasks] = useState([    
   ]);
 
   const handleAdd = (newTask) => {
