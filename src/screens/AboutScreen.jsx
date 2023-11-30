@@ -1,19 +1,13 @@
 import React from 'react';
-import { View, Text, Alert, TouchableOpacity } from 'react-native';
+import { View, Text } from 'react-native';
 import MainLayout from '../layouts/MainLayout';
 
-const AboutScreen = () => {
-  const handleNamePress = () => {
-    Alert.alert("Easter Egg", "You found the hidden Easter egg!");
-  };
-
+const AboutScreen = ({ navigation }) => {
   return (
-    <MainLayout>
+    <MainLayout navigation={navigation}>
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Text>Name of App: ToDo List App</Text>
-        <TouchableOpacity onPress={handleNamePress}>
-          <Text>Author Name: Billy Chan</Text>
-        </TouchableOpacity>z
+        <Text>Name of App: Expense Tracker App</Text>
+        <Text>Author: Fardin, Billy, Nathan, Felix</Text>
         <Text>Current Date: {new Date().toLocaleDateString()}</Text>
       </View>
     </MainLayout>

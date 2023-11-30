@@ -1,30 +1,23 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import HomeScreen from './screens/HomeScreen';
 import AboutScreen from './screens/AboutScreen'; 
+import IncomeScreen from './screens/IncomeScreen';
+import ExpenseScreen from './screens/ExpenseScreen';
+import SettingsScreen from './screens/SettingsScreen';
 
 const Stack = createStackNavigator();
 
 function App() {
-  const [tasks, setTasks] = useState([    
-  ]);
-
-  const handleAdd = (newTask) => {
-    if (tasks.includes(newTask)) {
-      alert("Task already exists!");
-      return;
-    }
-    setTasks([...tasks, newTask]);
-  };
-
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="Home">
-          {(props) => <HomeScreen {...props} tasks={tasks} onAdd={handleAdd} />}
-        </Stack.Screen>
+        <Stack.Screen name="Home" component={HomeScreen} />
         <Stack.Screen name="About" component={AboutScreen} />
+        <Stack.Screen name="Income" component={IncomeScreen} />
+        <Stack.Screen name="Expense" component={ExpenseScreen} />
+        <Stack.Screen name="Settings" component={SettingsScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
